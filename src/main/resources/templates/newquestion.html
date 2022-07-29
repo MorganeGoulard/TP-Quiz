@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter une question</title>
+</head>
+<body>
+
+    <form method="post" action="newquestion">
+        <div>
+            <label for="title">Intitulé de la question</label>
+            <input type="text" name="title" id="title">
+        </div>
+        <div>
+            <label for="proposition1">Proposition 1</label>
+            <input type="text" name="proposition" id="proposition1">
+                <div>
+                    <select name="correctAnswer1" id="correctAnswer1">
+                        <option value="" selected="selected">--Choisissez la réponse--</option>
+                        <option value="true">Vrai</option>
+                        <option value="false">Faux</option>
+                    </select>
+                </div>
+        </div>
+        <div>
+            <label for="proposition2">Proposition 2</label>
+            <input type="text" name="proposition" id="proposition2">
+            <div>
+                <select name="correctAnswer2" id="correctAnswer2">
+                    <option value="" selected="selected">--Choisissez la réponse--</option>
+                    <option value="true">Vrai</option>
+                    <option value="false">Faux</option>
+                </select>
+            </div>
+        </div>
+        <input type="submit" value="Envoyer">
+    </form>
+
+    <div>
+        <p>Liste des questions : </p>
+        <ul th:each="question:${questions}">
+            <li th:text="${question.title}"></li>
+            <li th:each="answer:${question.answers}"  th:text="${answer.proposition}"></li>
+        </ul>
+    </div>
+
+</body>
+</html>

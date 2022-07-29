@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultat du jeu</title>
+</head>
+<body>
+    <p th:if="${response == true}"> Bonne réponse! Vous gagnez un point! </p>
+    <p th:unless="${response == true}"> Mauvaise réponse, vous avez perdu... retentez votre chance! </p>
+    <a href="playgame">Rejouer</a>
+</body>
+</html>

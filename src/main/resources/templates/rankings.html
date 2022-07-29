@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Rankings</title>
+</head>
+<body>
+<ul th:each="player:${players}">
+  <li th:text="${player.pseudo} + ' ' + ${player.score}"></li>
+</ul>
+
+<a href="playgame">Jouer au jeu!</a>
+
+</body>
+</html>

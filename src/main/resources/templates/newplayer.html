@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a new player</title>
+</head>
+<body>
+
+
+    <form method="post" action="newplayer">
+        <label for="pseudo">Pseudo</label>
+        <input type="text" name="pseudo" id="pseudo">
+        <input type="submit" value="Envoyer">
+    </form>
+
+    <div>
+        <p>Liste des joueurs : </p>
+        <ul th:each="player:${players}">
+            <li th:text="${player.pseudo}"></li>
+        </ul>
+    </div>
+
+    <a href="playgame">Jouer au jeu!</a>
+
+
+</body>
+</html>
